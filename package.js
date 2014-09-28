@@ -1,7 +1,7 @@
 Package.describe({
-  "summary": "Server Side Rendering for Meteor",
+  "summary": "Server Side Rendering for Meteor with Blaze",
   "version": "1.0.0",
-  "git": "",
+  "git": "https://github.com/meteorhacks/meteor-ssr",
   "name": "meteorhacks:ssr"
 });
 
