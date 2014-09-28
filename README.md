@@ -22,7 +22,7 @@ Let's say we've a template in the `client/postList.html`
 </template>
 ```
 
-Now we can define template handlers in `lib/postList.html`. By defining template handler in `lib`, it's available for both client and the server. But you can define two different helpers as well.
+Now we can define template handlers in `lib/postList.js`. By defining template handler in `lib`, it's available for both client and the server. But you can define two different helpers as well.
 
 ```js
 Template.postList.posts = function(query) {
