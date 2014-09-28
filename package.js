@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   configurePackage(api);
-  api.export(['Template']);
+  api.export(['Template', 'SSR'], ['server']);
 });
 
 Package.onTest(function(api) {
@@ -27,6 +27,7 @@ function configurePackage(api) {
   api.addFiles([
     'lib/overrides.js',
     'lib/template.js',
-    'lib/core.js'
+    'lib/core.js',
+    'lib/api.js',
   ], 'server');
 }
