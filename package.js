@@ -27,6 +27,7 @@ function configurePackage(api) {
   api.addFiles([
     'lib/overrides.js',
     'lib/template.js',
+    'lib/dynamic.js',
     'lib/core.js',
     'lib/api.js',
   ], 'server');
