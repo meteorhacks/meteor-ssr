@@ -1,4 +1,4 @@
-# Server Side Rendering for Meteor with Blaze
+# Server Side Rendering for Meteor
 
 Now, you can render Blaze templates on the server very easily. And also, you can assign helpers for templates in the server as well.
 
