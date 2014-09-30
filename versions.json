@@ -9,6 +9,10 @@
       "2.0.1"
     ],
     [
+      "blaze-tools",
+      "1.0.0"
+    ],
+    [
       "deps",
       "1.0.4"
     ],
@@ -19,6 +23,10 @@
     [
       "geojson-utils",
       "1.0.0"
+    ],
+    [
+      "html-tools",
+      "1.0.1"
     ],
     [
       "htmljs",
@@ -39,6 +47,10 @@
     [
       "meteor",
       "1.1.1"
+    ],
+    [
+      "minifiers",
+      "1.1.0"
     ],
     [
       "minimongo",
@@ -62,6 +74,10 @@
     ],
     [
       "spacebars",
+      "1.0.2"
+    ],
+    [
+      "spacebars-compiler",
       "1.0.2"
     ],
     [
