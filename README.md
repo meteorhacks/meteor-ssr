@@ -1,4 +1,4 @@
-# Server Side Rendering for Meteor with Blaze
+# Server Side Rendering for Meteor
 
 Now, you can render Blaze templates on the server very easily. And also, you can assign helpers for templates in the server as well.
 
@@ -11,6 +11,8 @@ meteor add meteorhacks:ssr
 ## Usage
 
 Let's say we've a template in the `client/postList.html`
+> You must create your tempalate in a place it can be seen by the client.
+> We are not loading template via browser, but in order to built them, templates needs to be on the client.
 
 ```html
 <template name='postList'>
