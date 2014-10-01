@@ -38,12 +38,27 @@ var data = {query: query};
 var renderedHTML = SSR.render('postList', data); 
 ```
 
-## Oh! I was expecting more
+## API
 
-Have you expected to render the initial page on the server and send it to the client. That's great and that's what we really needed. 
+### SSR.render(template, data)
+You can render a template with data. For `template` argument you can either pass the name of the template or the actual template instance itself.
 
-But, this is the basic building block and we can build tools on top of this.
-May be we can plug this into `Iron Router`, who knows :)
+### SSR.compileTemplate(templateName, stringTemplateContent)
+You can use this API to compile templates in the server. See for an example.
+
+```js
+SSR.compileTemplate('title', '<b>Hello {{user}}</b>');
+
+// access the compiled template
+Template.title.user = function() {
+  return "Arunoda Susiripala";
+};
+```
+You can also define you templates on the `/private` directry and compile them as shown below.
+
+```js
+SSR.compileTemplate('title', Assets.getText('title.html'));
+```
 
 ## What can we do with SSR
 
