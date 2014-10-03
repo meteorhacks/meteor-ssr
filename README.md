@@ -1,6 +1,6 @@
 # Server Side Rendering for Meteor
 
-Now, you can render Blaze templates on the server very easily. And also, you can assign helpers for templates in the server as well.
+Thanks to `meteorhacks:ssr`, you can now render Blaze templates on the server very easily, and you can assign helpers to server-side templates as well.
 
 ### Installation
 
@@ -10,9 +10,9 @@ meteor add meteorhacks:ssr
 
 ## Usage
 
-Let's say we've a template in the `client/postList.html`
-> You must create your tempalate in a place it can be seen by the client.
-> We are not loading template via browser, but in order to built them, templates needs to be on the client.
+Let's say we have a template in `client/postList.html`
+
+(Note: You must create your tempalate in a place it can be seen by the client. We are not loading the template via the browser, but in order to be built templates need to be on the client.)
 
 ```html
 <template name='postList'>
@@ -24,7 +24,7 @@ Let's say we've a template in the `client/postList.html`
 </template>
 ```
 
-Now we can define template handlers in `lib/postList.js`. By defining template handler in `lib`, it's available for both client and the server. But you can define two different helpers as well.
+Now we can define a template handler in `lib/postList.js`. By defining a template handler in `lib`, we make it available to both the client and the server. You could also define more than one helper.
 
 ```js
 Template.postList.posts = function(query) {
@@ -32,7 +32,7 @@ Template.postList.posts = function(query) {
 }
 ```
 
-Now let's render `postList` on the server side
+Now let's render `postList` server-side:
 
 ```js
 var query = {category: 'kadira'};
@@ -43,10 +43,12 @@ var renderedHTML = SSR.render('postList', data);
 ## API
 
 ### SSR.render(template, data)
-You can render a template with data. For `template` argument you can either pass the name of the template or the actual template instance itself.
+
+You can render a template with data. For the `template` argument, you can either pass the name of the template or the actual template instance itself.
 
 ### SSR.compileTemplate(templateName, stringTemplateContent)
-You can use this API to compile templates in the server. See for an example.
+
+You can use this API to compile templates on the server. For example:
 
 ```js
 SSR.compileTemplate('title', '<b>Hello {{user}}</b>');
@@ -56,25 +58,25 @@ Template.title.user = function() {
   return "Arunoda Susiripala";
 };
 ```
-You can also define you templates on the `/private` directry and compile them as shown below.
+You can also define you templates in the `/private` directry and compile them as shown below.
 
 ```js
 SSR.compileTemplate('title', Assets.getText('title.html'));
 ```
 
-## What can we do with SSR
+## What Can Be Done With SSR
 
-Still, we can do a lot of stuff with SSR. Since, this is full Blaze on the server, you can have sub-templates, dynamic templates and all the Blaze's awesome features. These are the few things you can do with SSR.
+Since this is the full Blaze API on the server, you can have sub-templates, dynamic templates, and all of Blaze's awesome features. These are the few things you can do with SSR:
 
-* Render HTML pages for SEO bots
-* Render HTML pages for some of your routes (you may need to serve html yourself)
-* Build SEO aware static sites
-* Handy email templates with Blaze
+* Render HTML pages for SEO bots.
+* Render HTML pages for some of your routes (you may need to serve HTML yourself).
+* Build SEO aware static sites.
+* Handle email templates with Blaze.
 
-## Wow, How you did this
+## Wow, How Did You Do This?!
 
-Actually, most of the stuff has been already done by Meteor, so kudos to Meteor team.
+Actually, most of this stuff had already been done by Meteor, so kudos to the Meteor team.
 
 * This package loads all your exisitng client side templates on the server side.
-* This also, adds some patches to Blaze.
-* Finally, this package comes with a clean and nice API to render templates.
+* This also adds some patches to Blaze.
+* Finally, this package comes with a nice and clean API to render templates.
