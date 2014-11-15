@@ -1,6 +1,6 @@
 Package.describe({
   "summary": "Server Side Rendering for Meteor with Blaze",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "git": "https://github.com/meteorhacks/meteor-ssr",
   "name": "meteorhacks:ssr"
 });
@@ -28,7 +28,6 @@ function configurePackage(api) {
     'lib/overrides.js',
     'lib/template.js',
     'lib/dynamic.js',
-    'lib/core.js',
     'lib/api.js',
   ], 'server');
 }
