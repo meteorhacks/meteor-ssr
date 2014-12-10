@@ -15,15 +15,16 @@ Package.onTest(function(api) {
   api.use([
     'tinytest',
   ], 'server');
-  
+
   api.addFiles([
-    
+
   ], 'server');
 });
 
 function configurePackage(api) {
   api.versionsFrom('METEOR@0.9.2');
   api.use(['blaze', 'spacebars', 'spacebars-compiler'], 'server');
+  api.use('jade-compiler', { weak: true });
   api.addFiles([
     'lib/overrides.js',
     'lib/template.js',
