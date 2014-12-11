@@ -17,7 +17,7 @@ Package.onTest(function(api) {
   ], 'server');
 
   api.addFiles([
-
+    'test/base.js'
   ], 'server');
 });
 
