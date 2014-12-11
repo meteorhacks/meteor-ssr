@@ -14,17 +14,19 @@ Package.onTest(function(api) {
   configurePackage(api);
   api.use([
     'tinytest',
+    'mquandalle:jade-compiler@0.4.0_1'
   ], 'server');
 
   api.addFiles([
-    'test/base.js'
+    'test/base.js',
+    'test/jade.js'
   ], 'server');
 });
 
 function configurePackage(api) {
   api.versionsFrom('METEOR@0.9.2');
   api.use(['blaze', 'spacebars', 'spacebars-compiler'], 'server');
-  api.use('jade-compiler', { weak: true });
+  api.use('jade-compiler@0.4.0_1', { weak: true });
   api.addFiles([
     'lib/overrides.js',
     'lib/template.js',

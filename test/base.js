@@ -1,6 +1,6 @@
 format = Npm.require('util').format;
 
-Tinytest.add("base api usage", function(test) {
+Tinytest.add("base - simple api usage", function(test) {
   var name = Random.id();
   SSR.compileTemplate(name, "Hello {{name}}");
   var renderedText = SSR.render(name, {name: "arunoda"});
@@ -8,7 +8,7 @@ Tinytest.add("base api usage", function(test) {
   test.equal(renderedText, "Hello arunoda");
 });
 
-Tinytest.add("using Template instance to render", function(test) {
+Tinytest.add("base - using Template instance to render", function(test) {
   var name = Random.id();
   SSR.compileTemplate(name, "Hello {{name}}");
   var renderedText = SSR.render(Template[name], {name: "arunoda"});
@@ -16,7 +16,7 @@ Tinytest.add("using Template instance to render", function(test) {
   test.equal(renderedText, "Hello arunoda");
 });
 
-Tinytest.add("using Template helpers", function(test) {
+Tinytest.add("base - using Template helpers", function(test) {
   var name = Random.id();
   SSR.compileTemplate(name, "{{welcomeMessage}}, {{name}}");
   Template[name].helpers({
@@ -29,7 +29,7 @@ Tinytest.add("using Template helpers", function(test) {
   test.equal(renderedText, "Good Morning, arunoda");
 });
 
-Tinytest.add("base dynamic templates", function(test) {
+Tinytest.add("base - base dynamic templates", function(test) {
   var name = Random.id();
   SSR.compileTemplate(name, "Hello {{name}}");
   var name2 = Random.id();
@@ -42,7 +42,7 @@ Tinytest.add("base dynamic templates", function(test) {
   test.equal(renderedText, "MeteorHacks: Hello arunoda");
 });
 
-Tinytest.add("cursor support", function(test) {
+Tinytest.add("base - cursor support", function(test) {
   var name = Random.id();
   SSR.compileTemplate(name, "{{#each posts}}{{name}}, {{/each}}");
 
