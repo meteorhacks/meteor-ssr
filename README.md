@@ -2,7 +2,7 @@
 
 Now, you can render Blaze templates on the server very easily. And also, you can assign helpers for templates in the server as well.
 
-> Previously, this package loads all the client side templates when your app starts. 
+> Previously, this package loads all the client side templates when your app starts.
 > But now meteor don't allow us to do that. So that behaviour has been removed.
 
 ### Installation
@@ -44,7 +44,7 @@ Write your html content inside the `private` directory.
 
 ~~~html
 <!-- file: private/hello.html -->
-Hello {{username}}, <br> 
+Hello {{username}}, <br>
 Now time is: {{time}}
 ~~~
 
@@ -66,8 +66,8 @@ You can render the template as previously.
 #### SSR.render(template, data)
 You can render a template with data. For `template` argument you can either pass the name of the template or the actual template instance itself.
 
-#### SSR.compileTemplate(templateName, stringTemplateContent)
-You can use this API to compile templates in the server. See for an example.
+#### SSR.compileTemplate(templateName, stringTemplateContent, [options])
+You can use this API to compile templates in the server. The `options` parameter allows you to choose the template language with the `language` option. If not provided this default to `html` which is handled by the spacebars compiler. You can also use `jade` as another option — and in this case you need to `meteor add mquandalle:jade` before.
 
 ## What can we do with SSR
 
