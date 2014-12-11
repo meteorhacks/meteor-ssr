@@ -67,7 +67,13 @@ You can render the template as previously.
 You can render a template with data. For `template` argument you can either pass the name of the template or the actual template instance itself.
 
 #### SSR.compileTemplate(templateName, stringTemplateContent, [options])
-You can use this API to compile templates in the server. The `options` parameter allows you to choose the template language with the `language` option. If not provided this default to `html` which is handled by the spacebars compiler. You can also use `jade` as another option — and in this case you need to `meteor add mquandalle:jade` before.
+You can use this API to compile templates in the server. The `options` parameter allows you to choose the template language with the `language` option. 
+
+If not provided this default to `html` which is handled by the spacebars compiler. 
+You can also use `jade` as another option — and in this case you need to add following package:
+~~~
+meteor add mquandalle:jade
+~~~
 
 ## What can we do with SSR
 
