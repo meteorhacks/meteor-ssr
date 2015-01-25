@@ -77,6 +77,8 @@ You can also use `jade` as another option — and in this case you need to add f
 meteor add mquandalle:jade
 ~~~
 
+Note: the order in which you add jade and SSR matters! First add jade as a dependency and then SSR, otherwise the jade-compiler can not be located by Meteor.
+
 ## What can we do with SSR
 
 Since, this is full Blaze on the server, you can have sub-templates, dynamic templates and all the awesome features of Blaze. These are the few things you can do with SSR.
