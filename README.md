@@ -75,6 +75,7 @@ If not provided this default to `html` which is handled by the spacebars compile
 You can also use `jade` as another option — and in this case you need to add following package:
 ~~~
 meteor add mquandalle:jade
+meteor add mquandalle:jade-compiler
 ~~~
 
 Note: the order in which you add jade and SSR matters! First add jade as a dependency and then SSR, otherwise the jade-compiler can not be located by Meteor.
